@@ -12,7 +12,7 @@ const OpenWeather = () => {
 const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState('New York');
-  const [apiKey, setApiKey] = useState('3f4024f91952fe5a8eefa002a50c8e6');
+  const [apiKey, setApiKey] = useState('3f4024f91952fe5a8eefa002a50c8e62');
 
 //   const allIcons = {
 //     "01d" : clear_icon,
