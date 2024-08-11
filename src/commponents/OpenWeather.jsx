@@ -52,6 +52,11 @@ fetchWeatherData();
   if (!weatherData) {
     return <div className='flex items-center justify-center' style={{fontSize: "25px", paddingTop: "300px", color: "red", fontWeight: "700"}}>Loading....</div>;
   }
+  const timestamp = weatherData.sys.sunset;
+  const date = new Date(timestamp * 1000).toLocaleString();
+
+  const iconCode = weatherData.weather[0].icon;
+  const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
 
   return (
     // <div>
@@ -80,9 +85,9 @@ fetchWeatherData();
 </div>
 
           <div className="font-bold text-xl">{weatherData.name}</div>
-          <div className="text-sm text-gray-500">Thursday 10 May 2020</div>
+          <div className="text-sm text-gray-500">{date}</div>
           <div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
-           <img src={clear_icon} alt="" />
+           <img  style={{ width: '100rem', height: '170px' }} src={iconUrl} alt={weatherData.weather[0].description} />
           </div>
           <div className="flex flex-row items-center justify-center mt-6">
             <div className="font-medium text-6xl">{weatherData.main.temp}°C</div>
@@ -104,7 +109,7 @@ fetchWeatherData();
           </div>
           <div className="flex flex-row justify-between mt-6">
             <div className="flex flex-col items-center">
-              <div className="font-medium text-sm">Wind</div>
+              <div className="font-medium text-sm">Wind Speed</div>
               <div className="text-sm text-gray-500">{weatherData.wind.speed} m/s</div>
             </div>
             <div className="flex flex-col items-center">
