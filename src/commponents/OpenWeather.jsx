@@ -33,7 +33,7 @@ const inputRef = useRef();
       const fetchWeatherData = async () => {
           try {
               const response = await fetch(
-                  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+                  `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
                 );
                 if (!response.ok) {
                     throw new Error(`HTTP error ${response.status}`);
@@ -116,6 +116,7 @@ fetchWeatherData();
               <div className="text-sm text-gray-500">{weatherData.visibility}</div>
             </div>
           </div>
+        <h1 className='pt-5'><strong>Created by: </strong>Ashraf Khan Zazai</h1>
         </div>
       </div>
   );
