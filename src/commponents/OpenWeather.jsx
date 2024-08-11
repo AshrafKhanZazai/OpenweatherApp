@@ -12,7 +12,7 @@ const OpenWeather = () => {
 const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState('New York');
-  const [apiKey, setApiKey] = useState('3f4024f91952fe5a8eefa002a50c8e62');
+  const [apiKey, setApiKey] = useState('3f4024f91952fe5a8eefa002a50c8e6');
 
 //   const allIcons = {
 //     "01d" : clear_icon,
@@ -50,7 +50,7 @@ fetchWeatherData();
 }, [city, apiKey]);
 
   if (!weatherData) {
-    return <div className='text-center' style={{fontSize: "25px", color: "red", fontWeight: "700"}}>Loading....</div>;
+    return <div className='flex items-center justify-center' style={{fontSize: "25px", paddingTop: "300px", color: "red", fontWeight: "700"}}>Loading....</div>;
   }
 
   return (
@@ -85,7 +85,7 @@ fetchWeatherData();
            <img src={clear_icon} alt="" />
           </div>
           <div className="flex flex-row items-center justify-center mt-6">
-            <div className="font-medium text-6xl">{weatherData.main.temp}°</div>
+            <div className="font-medium text-6xl">{weatherData.main.temp}°C</div>
             <div className="flex flex-col items-center ml-6">
               <div>{weatherData.weather[0].description}</div>
               <div className="mt-1">
