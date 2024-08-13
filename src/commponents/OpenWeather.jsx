@@ -91,7 +91,7 @@ fetchWeatherData();
           <div className="font-bold text-xl">{weatherData.name}</div>
           <div className="text-sm text-gray-500">{date}</div>
           <div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
-           <img  style={{ width: '200px', height: '200px' }} src={iconPath} alt={weatherData.weather[0].description} />
+           <img  style={{ width: '200px', height: '120px' }} src={iconPath} alt={weatherData.weather[0].description} />
           </div>
           <div className="flex flex-row items-center justify-center mt-6">
             <div className="font-medium text-6xl">{weatherData.main.temp}°C</div>
