@@ -125,7 +125,6 @@ fetchWeatherData();
               <div className="text-sm text-gray-500">{weatherData.visibility}</div>
             </div>
           </div>
-        <h1 className='pt-5'><strong>Created by: </strong>Ashraf Khan Zazai</h1>
         </div>
       </div>
   );
